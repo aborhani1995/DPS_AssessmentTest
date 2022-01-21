@@ -1,0 +1,73 @@
+---
+name: "task1"
+dataIns:
+- name: "t"
+  type: "string"
+  source: "t"
+- name: "w"
+  type: "number"
+  source: "w"
+- name: "p"
+  type: "string"
+  source: "p"
+workflowBody:
+- function:
+    name: "Split"
+    type: "Split"
+    dataIns:
+    - name: "originalStr"
+      type: "string"
+      source: "task1/t"
+    - name: "wordsPerBatch"
+      type: "number"
+      source: "task1/w"
+    dataOuts:
+    - name: "batches"
+      type: "collection"
+- parallelFor:
+    name: "ForEachBatch"
+    dataIns:
+    - name: "itrator"
+      type: "collection"
+      source: "Split/batches"
+    iterators: ["itrator"]
+    loopBody:
+    - function:
+        name: "Count"
+        type: "Count"
+        dataIns:
+        - name: "batch"
+          type: "collection"
+          source: "ForEachBatch/itrator"
+        - name: "pattern"
+          type: "string"
+          source: "task1/p"
+        dataOuts:
+        - name: "batchPatternCount"
+          type: "number"
+    dataOuts:
+    - name: "batchesPatternCounts"
+      type: "collection"
+      source: "Count/batchPatternCount"
+- function:
+    name: "Sum"
+    type: "Sum"
+    dataIns:
+    - name: "batchesPatternCounts"
+      type: "collection"
+      source: "ForEachBatch/batchesPatternCounts"
+    - name: "originalStr"
+      type: "string"
+      source: "task1/t"
+    dataOuts:
+    - name: "totalPatternCount"
+      type: "number"
+    - name: "originalStr"
+      type: "string"
+dataOuts:
+- name: "totalPatternCount"
+  type: "number"
+  source: "Sum/totalPatternCount"
+- name: "originalStr"
+  type: "string"
+  source: "Sum/originalStr"

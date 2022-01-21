@@ -1,0 +1,35 @@
+[
+	{
+		"functionType": "Split",
+		"resources": [
+			{
+				"type": "Local",
+				"properties": {
+					"Image": "ahborhani/split"
+				}
+			}
+		]
+	},
+	{
+		"functionType": "Count",
+		"resources": [
+			{
+				"type": "Local",
+				"properties": {
+					"Image": "ahborhani/count"
+				}
+			}
+		]
+	},
+	{
+		"functionType": "Sum",
+		"resources": [
+			{
+				"type": "Local",
+				"properties": {
+					"Image": "ahborhani/sum"
+				}
+			}
+		]
+	}
+]
