@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="58356b79-d91f-45f5-9be3-54c5fdaaab05" name="Default Changelist" comment="" />
+    <list default="true" id="58356b79-d91f-45f5-9be3-54c5fdaaab05" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +21,9 @@
         <flags show_one_result="true" new_tab="false" />
       </view>
     </search_options>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MPSBookmarkManager">
     <option name="myBookmarkInfos">
@@ -46,6 +51,7 @@
     </option>
   </component>
   <component name="ProjectId" id="23ybVLzR5iAnRIo5eesT11UdiCk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectPluginManager">
     <option name="pluginsState">
       <option name="de.itemis.mps.editor.celllayout.runtime.plugin.Runtime_ProjectPlugin">
@@ -96,6 +102,7 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
+      <pane id="FileSystem" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -109,13 +116,37 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:b710ca6f-2544-4f95-a62a-fbd66623838e(Task2) in IdeaFile[path: /home/amir0015/DPS_AssesmentTest/AssesmentTestWF/solutions/Task2/models/Task2.mps]" />
+              <option name="myItemId" value="r:b710ca6f-2544-4f95-a62a-fbd66623838e(Task2) in IdeaFile[path: /home/amir0015/DPS_AssessmentTest/AssesmentTestWF/solutions/Task2/models/Task2.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="AssesmentTestWF" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="f115513a-9b39-413d-93fc-1cdd6f327d7f" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AssesmentTestWF" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AssesmentTestWF" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="a3c6c198-7422-4377-9c0c-0a0d6ccaeb7d" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:8b5ea435-1d97-4cc1-b7e8-060601b964e1(Task1) in IdeaFile[path: /home/amir0015/DPS_AssessmentTest/AssesmentTestWF/solutions/Task1/models/Task1.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -138,18 +169,12 @@
               <option name="myItemId" value="f115513a-9b39-413d-93fc-1cdd6f327d7f" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AssesmentTestWF" />
+              <option name="myItemId" value="r:b710ca6f-2544-4f95-a62a-fbd66623838e(Task2) in IdeaFile[path: /home/amir0015/DPS_AssessmentTest/AssesmentTestWF/solutions/Task2/models/Task2.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="a3c6c198-7422-4377-9c0c-0a0d6ccaeb7d" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:8b5ea435-1d97-4cc1-b7e8-060601b964e1(Task1) in IdeaFile[path: /home/amir0015/DPS_AssesmentTest/AssesmentTestWF/solutions/Task1/models/Task1.mps]" />
+              <option name="myItemId" value="1658244289411905691" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -163,7 +188,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:b710ca6f-2544-4f95-a62a-fbd66623838e(Task2) in IdeaFile[path: /home/amir0015/DPS_AssesmentTest/AssesmentTestWF/solutions/Task2/models/Task2.mps]" />
+              <option name="myItemId" value="r:b710ca6f-2544-4f95-a62a-fbd66623838e(Task2) in IdeaFile[path: /home/amir0015/DPS_AssessmentTest/AssesmentTestWF/solutions/Task2/models/Task2.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -173,7 +198,6 @@
           </SELECTED>
         </subPane>
       </pane>
-      <pane id="FileSystem" />
     </panes>
   </component>
   <component name="ProjectViewState">
