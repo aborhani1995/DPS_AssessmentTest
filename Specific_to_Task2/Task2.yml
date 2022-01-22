@@ -1,0 +1,128 @@
+--
+name: "task2"
+dataIns:
+- name: "t"
+  type: "string"
+  source: "t"
+- name: "w"
+  type: "number"
+  source: "w"
+- name: "p"
+  type: "string"
+  source: "p"
+- name: "m"
+  type: "number"
+  source: "m"
+workflowBody:
+- function:
+    name: "Split"
+    type: "Split"
+    dataIns:
+    - name: "originalStr"
+      type: "string"
+      source: "task2/t"
+    - name: "wordsPerBatch"
+      type: "number"
+      source: "task2/w"
+    dataOuts:
+    - name: "batches"
+      type: "collection"
+- parallelFor:
+    name: "ForEachBatch"
+    dataIns:
+    - name: "iterator"
+      type: "collection"
+      source: "Split/batches"
+    iterators: ["iterator"]
+    loopBody:
+    - function:
+        name: "Count"
+        type: "Count"
+        dataIns:
+        - name: "batch"
+          type: "collection"
+          source: "ForEachBatch/iterator"
+        - name: "pattern"
+          type: "string"
+          source: "task2/p"
+        dataOuts:
+        - name: "batchPatternCount"
+          type: "number"
+    dataOuts:
+    - name: "batchesPatternCounts"
+      type: "collection"
+      source: "Count/batchPatternCount"
+- function:
+    name: "SumSplitAnalyze"
+    type: "SumSplitAnalyze"
+    dataIns:
+    - name: "occurrenceThreshold"
+      type: "number"
+      source: "task2/m"
+    - name: "originalStr"
+      type: "string"
+      source: "task2/t"
+    - name: "wordsPerBatch"
+      type: "number"
+      source: "task2/w"
+    - name: "batchesPatternCounts"
+      type: "collection"
+      source: "ForEachBatch/batchesPatternCounts"
+    dataOuts:
+    - name: "totalPatternCount"
+      type: "number"
+    - name: "batches"
+      type: "collection"
+    - name: "changeIndexes"
+      type: "collection"
+- parallelFor:
+    name: "ForEachChangingBatch"
+    dataIns:
+    - name: "iteratorBatch"
+      type: "collection"
+      source: "SumSplitAnalyze/batches"
+    - name: "itratorChangeIndex"
+      type: "collection"
+      source: "SumSplitAnalyze/changeIndexes"
+    iterators: ["iteratorBatch", "itratorChangeIndex"]
+    loopBody:
+    - function:
+        name: "Change"
+        type: "Change"
+        dataIns:
+        - name: "batch"
+          type: "collection"
+          source: "ForEachChangingBatch/iteratorBatch"
+        - name: "changeIndex"
+          type: "collection"
+          source: "ForEachChangingBatch/itratorChangeIndex"
+        dataOuts:
+        - name: "changedBatch"
+          type: "string"
+    dataOuts:
+    - name: "changedBatches"
+      type: "collection"
+      source: "Change/changedBatch"
+- function:
+    name: "Final"
+    type: "Final"
+    dataIns:
+    - name: "totalpatternCounts"
+      type: "number"
+      source: "SumSplitAnalyze/totalPatternCount"
+    - name: "changedBatches"
+      type: "collection"
+      source: "ForEachChangingBatch/changedBatches"
+    dataOuts:
+    - name: "changedStr"
+      type: "string"
+    - name: "totalPatternCount"
+      type: "number"
+dataOuts:
+- name: "changedStr"
+  type: "string"
+  source: "Final/changedStr"
+- name: "totalPatternCount"
+  type: "number"
+  source: "Final/totalPatternCount"
+
